@@ -1,0 +1,60 @@
+{
+  "type": "Categorization",
+  "elements": [
+    {
+      "type": "Category",
+      "label": "Inspection Report",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/InspectionReport"
+        },
+        {
+          "type": "Categorization",
+          "elements": [
+            {
+              "type": "Category",
+              "label": "Property",
+              "elements": [
+                {
+                  "type": "Control",
+                  "scope": "#/properties/InspectionReport/properties/property"
+                },
+                {
+                  "type": "Categorization",
+                  "elements": [
+                    {
+                      "type": "Category",
+                      "label": "Structure",
+                      "elements": [
+                        {
+                          "type": "Control",
+                          "scope": "#/properties/InspectionReport/properties/property/properties/structures"
+                        },
+                        {
+                          "type": "Categorization",
+                          "elements": [
+                            {
+                              "type": "Category",
+                              "label": "finished spaces",
+                              "elements": [
+                                {
+                                  "type": "Control",
+                                  "scope": "#/properties/InspectionReport/properties/property/properties/structures/properties/finished_spaces"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

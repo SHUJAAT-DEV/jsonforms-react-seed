@@ -1,0 +1,32 @@
+Please verify the implementation direction to achieve the menu, including nested submenus.
+
+- Second Problem:
+- I want to create data schemas where "$ref" elements should be displayed in a side menu (parent.children...).
+- For example:
+- "address": {
+- "$ref": "#/definitions/sgt.integration.propertydata.v1.Address",
+- "additionalProperties": true,
+- "type": "object"
+- },
+- "identification": {
+- "$ref": "#/definitions/sgt.integration.propertydata.v1.Identification",
+- "additionalProperties": true
+- },
+- "property_analysis": {
+- "$ref": "#/definitions/sgt.integration.propertydata.v1.PropertyAnalysis",
+- "additionalProperties": true
+- },
+- "site": {
+- "$ref": "#/definitions/sgt.integration.propertydata.v1.Site",
+- "additionalProperties": true
+- },
+- "structures": {
+- "items": {
+-       "$ref": "#/definitions/sgt.integration.propertydata.v1.Structures"
+- },
+- "type": "array"
+- }
+-
+- All these "$ref" elements should be listed in a side menu and not displayed in the parent form.
+- Currently, the "structures" array is showing in the parent form because its type is an array.
+- Is there any way to hide the "structures" array from the parent form and create a separate submenu?

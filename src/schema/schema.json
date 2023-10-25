@@ -1,0 +1,841 @@
+{
+  "type": "object",
+  "definitions": {
+    "LeftMenu": {
+      "type": "object"
+    },
+    "InspectionReport": {
+      "properties": {
+        "property": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Property",
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "case_file_id": {
+          "type": "string"
+        },
+        "pda_submitter_entity": {
+          "type": "string"
+        },
+        "property_data_collector_name": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Inspection Report"
+    },
+    "sgt.integration.propertydata.v1.Address": {
+      "properties": {
+        "street_address": {
+          "type": "string"
+        },
+        "unit_number": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Address"
+    },
+    "sgt.integration.propertydata.v1.AdverseSiteConditions": {
+      "properties": {
+        "adverse_type": {
+          "type": "string"
+        },
+        "description_adverse_site_condition": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Adverse Site Conditions"
+    },
+    "sgt.integration.propertydata.v1.Alley": {
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "private": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Alley"
+    },
+    "sgt.integration.propertydata.v1.Ancillary": {
+      "properties": {
+        "attic_floor_exists": {
+          "type": "boolean"
+        },
+        "attic_heated": {
+          "type": "boolean"
+        },
+        "alley": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Alley",
+          "additionalProperties": true
+        },
+        "appliances": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Appliances",
+          "additionalProperties": true
+        },
+        "exterior": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Exterior",
+          "additionalProperties": true
+        },
+        "foundation": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Foundation",
+          "additionalProperties": true
+        },
+        "gas": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Gas",
+          "additionalProperties": true
+        },
+        "interior": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Interior",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Ancillary"
+    },
+    "sgt.integration.propertydata.v1.Appliances": {
+      "properties": {
+        "refrigerator_exists": {
+          "type": "boolean"
+        },
+        "dishwasher_exists": {
+          "type": "boolean"
+        },
+        "disposal_exists": {
+          "type": "boolean"
+        },
+        "microwave_exists": {
+          "type": "boolean"
+        },
+        "washer_dryer_exists": {
+          "type": "boolean"
+        },
+        "other_exists": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Appliances"
+    },
+    "sgt.integration.propertydata.v1.CoolingSystems": {
+      "properties": {
+        "cooling_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Cooling Systems"
+    },
+    "sgt.integration.propertydata.v1.ElectricalServices": {
+      "properties": {
+        "service_type": {
+          "type": "string"
+        },
+        "off_grid_service": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Electrical Services"
+    },
+    "sgt.integration.propertydata.v1.Exterior": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Exterior"
+    },
+    "sgt.integration.propertydata.v1.ExteriorDeficiencies": {
+      "properties": {
+        "deficiency_name": {
+          "type": "string"
+        },
+        "deficiency_type": {
+          "type": "string"
+        },
+        "description_exterior_deficiency": {
+          "type": "string"
+        },
+        "exterior_deficiency_severity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Exterior Deficiencies"
+    },
+    "sgt.integration.propertydata.v1.ExteriorUpdates": {
+      "properties": {
+        "exterior_updated_component": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Exterior Updates"
+    },
+    "sgt.integration.propertydata.v1.FinishedSpaces": {
+      "properties": {
+        "levels": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.Levels"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Finished Spaces"
+    },
+    "sgt.integration.propertydata.v1.Foundation": {
+      "properties": {
+        "concrete_slab": {
+          "type": "boolean"
+        },
+        "crawl_space": {
+          "type": "boolean"
+        },
+        "sump_pump": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Foundation"
+    },
+    "sgt.integration.propertydata.v1.Gas": {
+      "properties": {
+        "public": {
+          "type": "boolean"
+        },
+        "other": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Gas"
+    },
+    "sgt.integration.propertydata.v1.GpsCoordinates": {
+      "properties": {
+        "latitude": {
+          "type": "integer"
+        },
+        "longitude": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Gps Coordinates"
+    },
+    "sgt.integration.propertydata.v1.HeatingSystems": {
+      "properties": {
+        "heating_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Heating Systems"
+    },
+    "sgt.integration.propertydata.v1.Identification": {
+      "properties": {
+        "gps_coordinates": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.GpsCoordinates",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Identification"
+    },
+    "sgt.integration.propertydata.v1.Interior": {
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Interior"
+    },
+    "sgt.integration.propertydata.v1.InteriorDeficiencies": {
+      "properties": {
+        "deficiency_name": {
+          "type": "string"
+        },
+        "deficiency_type": {
+          "type": "string"
+        },
+        "interior_deficiency_severity": {
+          "type": "string"
+        },
+        "description_interior_deficiency": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Interior Deficiencies"
+    },
+    "sgt.integration.propertydata.v1.InteriorUpdates": {
+      "properties": {
+        "interior_updated_component": {
+          "type": "string"
+        },
+        "interior_update_type": {
+          "type": "string"
+        },
+        "interior_update_timeframe": {
+          "type": "string"
+        },
+        "interior_update_description": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Interior Updates"
+    },
+    "sgt.integration.propertydata.v1.Levels": {
+      "properties": {
+        "level_number": {
+          "type": "integer"
+        },
+        "total_area": {
+          "type": "integer"
+        },
+        "finished_living_area": {
+          "type": "integer"
+        },
+        "level_low_ceiling": {
+          "type": "boolean"
+        },
+        "earth_contact": {
+          "type": "boolean"
+        },
+        "attic": {
+          "type": "boolean"
+        },
+        "finished_non_gla_living_area": {
+          "type": "integer"
+        },
+        "attic_access": {
+          "type": "string"
+        },
+        "below_grade_exits": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "rooms": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.Rooms"
+          },
+          "type": "array"
+        },
+        "attic_access_height": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Levels"
+    },
+    "sgt.integration.propertydata.v1.Location": {
+      "properties": {
+        "location_description_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Location"
+    },
+    "sgt.integration.propertydata.v1.Locations": {
+      "properties": {
+        "location": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Location",
+          "additionalProperties": true
+        },
+        "location_description_details": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Locations"
+    },
+    "sgt.integration.propertydata.v1.Lot": {
+      "properties": {
+        "lot_size_estimate": {
+          "type": "boolean"
+        },
+        "lot_size": {
+          "type": "string"
+        },
+        "lot_size_units": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Lot"
+    },
+    "sgt.integration.propertydata.v1.MechanicalDeficiencies": {
+      "properties": {
+        "deficiency_name": {
+          "type": "string"
+        },
+        "mechanical_deficiency_severity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Mechanical Deficiencies"
+    },
+    "sgt.integration.propertydata.v1.NonResidentialUses": {
+      "properties": {
+        "non_residential_use_type": {
+          "type": "string"
+        },
+        "description_non_residential_use": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Non Residential Uses"
+    },
+    "sgt.integration.propertydata.v1.OffSiteFeature": {
+      "properties": {
+        "road": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Road",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Off Site Feature"
+    },
+    "sgt.integration.propertydata.v1.Property": {
+      "properties": {
+        "property_occupied": {
+          "type": "boolean"
+        },
+        "address": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Address",
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "identification": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Identification",
+          "additionalProperties": true
+        },
+        "property_analysis": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.PropertyAnalysis",
+          "additionalProperties": true
+        },
+        "site": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Site",
+          "additionalProperties": true
+        },
+        "structures": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.Structures"
+          },
+          "type": "array"
+        },
+        "ansi_compliance": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Property"
+    },
+    "sgt.integration.propertydata.v1.PropertyAnalysis": {
+      "properties": {
+        "property_condition_rating": {
+          "type": "integer"
+        },
+        "property_quality_rating": {
+          "type": "integer"
+        },
+        "repair_estimate": {
+          "type": "integer"
+        },
+        "ansi_compliance": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Property Analysis"
+    },
+    "sgt.integration.propertydata.v1.PropertyImprovements": {
+      "properties": {
+        "property_improvement_type": {
+          "type": "string"
+        },
+        "description_property_improvement": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Property Improvements"
+    },
+    "sgt.integration.propertydata.v1.Road": {
+      "properties": {
+        "road_maintained_indicator": {
+          "type": "boolean"
+        },
+        "year_round_access_indicator": {
+          "type": "boolean"
+        },
+        "road_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Road"
+    },
+    "sgt.integration.propertydata.v1.RoomFeatures": {
+      "properties": {
+        "room_feature_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Room Features"
+    },
+    "sgt.integration.propertydata.v1.Rooms": {
+      "properties": {
+        "room_type": {
+          "type": "string"
+        },
+        "other_room_type_description": {
+          "type": "string"
+        },
+        "interior_deficiencies": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.InteriorDeficiencies"
+          },
+          "type": "array"
+        },
+        "interior_updates": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.InteriorUpdates"
+          },
+          "type": "array"
+        },
+        "plumbing_fixtures": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "room_features": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.RoomFeatures"
+          },
+          "type": "array"
+        },
+        "car_storage": {
+          "type": "string"
+        },
+        "range_oven_exists": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Rooms"
+    },
+    "sgt.integration.propertydata.v1.SewerServices": {
+      "properties": {
+        "service_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Sewer Services"
+    },
+    "sgt.integration.propertydata.v1.Site": {
+      "properties": {
+        "lot": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.Lot",
+          "additionalProperties": true
+        },
+        "site_feature": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.SiteFeature",
+          "additionalProperties": true
+        },
+        "off_site_feature": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.OffSiteFeature",
+          "additionalProperties": true
+        },
+        "site_utility": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.SiteUtility",
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Site"
+    },
+    "sgt.integration.propertydata.v1.SiteFeature": {
+      "properties": {
+        "locations": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.Locations"
+          },
+          "type": "array"
+        },
+        "views": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.Views"
+          },
+          "type": "array"
+        },
+        "adverse_site_conditions": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.AdverseSiteConditions"
+          },
+          "type": "array"
+        },
+        "property_improvements": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.PropertyImprovements"
+          },
+          "type": "array"
+        },
+        "non_residential_uses": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.NonResidentialUses"
+          },
+          "type": "array"
+        },
+        "waterfront_site_improvements": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Site Feature"
+    },
+    "sgt.integration.propertydata.v1.SiteUtility": {
+      "properties": {
+        "electrical_services": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.ElectricalServices"
+          },
+          "type": "array"
+        },
+        "sewer_services": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.SewerServices"
+          },
+          "type": "array"
+        },
+        "water_services": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.WaterServices"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Site Utility"
+    },
+    "sgt.integration.propertydata.v1.Structures": {
+      "properties": {
+        "structure_type": {
+          "enum": [
+            "DWELLING",
+            "WORKSHOP",
+            "BARN",
+            "POLE_BUILDING",
+            "STABLES",
+            "RIDING_ARENA",
+            "POOL_HOUSE",
+            "DETACHED_GARAGE",
+            "OTHER_OUTBUILDING"
+          ],
+          "oneOf": [
+            {
+              "description": "Dwelling",
+              "const": "DWELLING"
+            },
+            {
+              "description": "WorkShop",
+              "const": "WORKSHOP"
+            },
+            {
+              "description": "Barn",
+              "const": "BARN"
+            },
+            {
+              "description": "Pole Building",
+              "const": "POLE_BUILDING"
+            },
+            {
+              "description": "Stables",
+              "const": "STABLES"
+            },
+            {
+              "description": "Riding Arena",
+              "const": "RIDING_ARENA"
+            },
+            {
+              "description": "Pool House",
+              "const": "POOL_HOUSE"
+            },
+            {
+              "description": "Detached Garage",
+              "const": "DETACHED_GARAGE"
+            },
+            {
+              "const": "OTHER_OUTBUILDING"
+            }
+          ]
+        },
+        "attachment_type": {
+          "type": "string"
+        },
+        "construction_type": {
+          "type": "string"
+        },
+        "construction_status": {
+          "type": "string"
+        },
+        "structure_area": {
+          "type": "integer"
+        },
+        "contains_rooms": {
+          "type": "boolean"
+        },
+        "year_built": {
+          "type": "integer"
+        },
+        "year_built_estimate": {
+          "type": "boolean"
+        },
+        "uniform_heating_and_cooling_indicator": {
+          "type": "boolean"
+        },
+        "uniform_heating_and_cooling_description": {
+          "type": "string"
+        },
+        "finished_spaces": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.FinishedSpaces"
+          },
+          "type": "array"
+        },
+        "exterior_deficiencies": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.ExteriorDeficiencies"
+          },
+          "type": "array"
+        },
+        "exterior_updates": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.ExteriorUpdates"
+          },
+          "type": "array"
+        },
+        "mechanical_deficiencies": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.MechanicalDeficiencies"
+          },
+          "type": "array"
+        },
+        "heating_systems": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.HeatingSystems"
+          },
+          "type": "array"
+        },
+        "cooling_systems": {
+          "items": {
+            "$ref": "#/definitions/sgt.integration.propertydata.v1.CoolingSystems"
+          },
+          "type": "array"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Structures"
+    },
+    "sgt.integration.propertydata.v1.View": {
+      "properties": {
+        "view_description_type": {
+          "type": "string"
+        },
+        "view_quality": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "View"
+    },
+    "sgt.integration.propertydata.v1.Views": {
+      "properties": {
+        "view": {
+          "$ref": "#/definitions/sgt.integration.propertydata.v1.View",
+          "additionalProperties": true
+        },
+        "view_description_details": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Views"
+    },
+    "sgt.integration.propertydata.v1.WaterServices": {
+      "properties": {
+        "water_type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true,
+      "type": "object",
+      "title": "Water Services"
+    }
+  },
+  "properties": {
+    "InspectionReport": {
+      "$ref": "#/definitions/InspectionReport"
+    },
+    "Menu": {
+      "$ref": "#/definitions/LeftMenu"
+    }
+  }
+}
